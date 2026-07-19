@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jayce's Lab</title>
+  <meta name="description" content="Jayce 的技术博客，记录软件开发、AI 与学习系统的实践。">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Jayce's Lab">
+  <meta property="og:description" content="软件开发、AI 与学习系统的实践笔记。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jayceto946-byte.github.io/">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #1f2328;
+      --muted: #636c76;
+      --line: #d8dee4;
+      --accent: #0969da;
+      --code: #f6f8fa;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --muted: #8d96a0;
+        --line: #30363d;
+        --accent: #58a6ff;
+        --code: #161b22;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html { font-size: 16px; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .page {
+      width: min(100% - 2.5rem, 680px);
+      margin: 0 auto;
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-name {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 650;
+      letter-spacing: -0.015em;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    main { padding: 3.25rem 0; }
+
+    .intro { margin-bottom: 3.5rem; }
+
+    h1 {
+      max-width: 18ch;
+      margin: 0 0 1rem;
+      font-size: clamp(1.8rem, 6vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .intro p {
+      max-width: 34rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    section { margin-top: 3rem; }
+
+    h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: grid;
+      grid-template-columns: 7.25rem 1fr;
+      gap: 1rem;
+      padding: 0.8rem 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 0.82rem;
+    }
+
+    .item-title {
+      color: var(--text);
+      font-weight: 550;
+      text-decoration: none;
+    }
+
+    .item-title:hover { color: var(--accent); }
+
+    .empty {
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+    }
+
+    code {
+      padding: 0.12rem 0.32rem;
+      border-radius: 4px;
+      background: var(--code);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    footer {
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 520px) {
+      .page {
+        width: min(100% - 2rem, 680px);
+        padding-top: 2rem;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+
+      main { padding: 2.5rem 0; }
+
+      .list li {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="site-name">Jayce's Lab</p>
+      <nav aria-label="主导航">
+        <a href="#writing">文章</a>
+        <a href="#projects">项目</a>
+        <a href="https://github.com/jayceto946-byte">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="intro">
+        <h1>构建，理解，记录。</h1>
+        <p>这里记录软件开发、AI 与学习系统的实践笔记。</p>
+      </div>
+
+      <section id="writing" aria-labelledby="writing-title">
+        <h2 id="writing-title">文章</h2>
+        <p class="empty">第一篇文章正在整理中。</p>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">项目</h2>
+        <ul class="list">
+          <li>
+            <span class="meta">GitHub</span>
+            <a class="item-title" href="https://github.com/jayceto946-byte/kaoyan-assistant">kaoyan-assistant</a>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="about-title">
+        <h2 id="about-title">关于</h2>
+        <p class="empty">我是 Jayce，一名持续学习和构建的开发者。</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Jayce. Built with plain HTML and CSS.</p>
+    </footer>
+  </div>
+</body>
+</html>
