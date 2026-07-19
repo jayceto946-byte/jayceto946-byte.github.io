@@ -1,0 +1,9 @@
+title: Jayce's Lab
+description: 软件开发、AI 与学习系统的实践笔记。
+url: https://jayceto946-byte.github.io
+lang: zh-CN
+timezone: Asia/Shanghai
+markdown: kramdown
+permalink: /posts/:title/
+exclude:
+  - README.md

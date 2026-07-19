@@ -1,0 +1,38 @@
+---
+layout: default
+title: 在线写作
+permalink: /write/
+description: 在 GitHub 在线创建并发布博客文章。
+---
+<article>
+  <h1>在线写作</h1>
+  <p class="summary">登录 GitHub 后，可以直接创建 Markdown 文章或上传文件。提交后博客会自动更新。</p>
+  <div class="actions">
+    <a class="button" id="new-post" href="https://github.com/jayceto946-byte/jayceto946-byte.github.io/new/main/_posts">新建文章</a>
+    <a class="button" href="https://github.com/jayceto946-byte/jayceto946-byte.github.io/upload/main/_posts">上传 Markdown</a>
+    <a class="button" href="https://github.com/jayceto946-byte/jayceto946-byte.github.io/upload/main/assets/images">上传图片</a>
+  </div>
+  <h2>发布步骤</h2>
+  <ol class="steps">
+    <li>点击“新建文章”，把文件名中的 <code>article-title</code> 改成简短英文标题。</li>
+    <li>修改文章标题，然后用 Markdown 写正文。</li>
+    <li>点击 <code>Commit changes</code>，选择直接提交到 <code>main</code>。</li>
+    <li>等待约一分钟，文章会自动出现在首页。</li>
+  </ol>
+  <p class="note">“写作”页面可以公开访问，但只有拥有仓库写权限并登录 GitHub 的账号才能真正发布。不要在文章或仓库中填写密码、Token 等敏感信息。</p>
+</article>
+<script>
+  const link = document.querySelector('#new-post');
+  const localDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const template = `---
+layout: post
+title: "文章标题"
+date: ${localDate} 12:00:00 +0800
+description: "一句话摘要"
+---
+
+从这里开始写正文。
+`;
+  const params = new URLSearchParams({ filename: `${localDate}-article-title.md`, value: template });
+  link.href = `${link.href}?${params.toString()}`;
+</script>
